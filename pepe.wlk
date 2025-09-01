@@ -13,7 +13,7 @@ object pepe {
         bonoDePresentismo = unBono
     }
     method sueldoNeto(){
-        return categoria.sueldoPorCategoria()
+        return categoria.neto()
     }
     method sueldo(){
         return (self.sueldoNeto() + bonoDeResultado.valorPara(self) + 
@@ -33,13 +33,13 @@ object pepe {
 //Getters se necesita cuando un objeto exterior necesita acceder a un dato
 
 object cadete {
-    method sueldoPorCategoria(){
+    method neto(){
         return 20000
     }
 }
 
 object gerente {
-    method sueldoPorCategoria(){
+    method neto(){
         return 150000
     }
 }
