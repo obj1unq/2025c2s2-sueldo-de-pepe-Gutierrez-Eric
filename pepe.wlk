@@ -93,3 +93,74 @@ object bonoPorPresentismoDemagogico{
         }
     }
 }
+
+object sofia {
+    var categoria = cadete
+    const bonoDeResultado = bonoNulo
+    method sueldo () {
+        return self.sueldoNeto() + bonoDeResultado.valorPara(self)
+    }
+    method sueldoNeto(){
+        return (categoria.neto() * 1.3)
+    }
+    method recategorizar(_categoria){
+        categoria = _categoria
+    }
+    method categoria (){
+        return categoria
+    }
+}
+
+object vendedor{
+    const ventas = 0
+    method neto (){
+        if(ventas > 10){
+            return 16000 * self.activarAumentoPorMuchasVentas()
+        }else {
+            return 16000 * self.desactivarAumentoPorMuchasVentas()
+        }
+    }
+    method activarAumentoPorMuchasVentas(){
+        return 1.25
+    }
+    method desactivarAumentoPorMuchasVentas(){
+        return 1
+    }
+}
+
+object medioTiempo {
+    method categoriaBase(categoria){
+
+    }
+}
+
+object roque {
+    const bonoDeResultado = bonoNulo
+    method sueldoNeto(){
+        return 28000
+    }
+    method sueldo(){
+        return self.sueldoNeto() + bonoDeResultado.valorPara(self)
+                + 9000
+    }
+}
+
+object ernesto {
+    var compañero = pepe
+    const bonoDePresentismo = bonoNulo
+    method compañero (){
+        return compañero
+    }
+    method cambiarCompañero(_compañero){
+        compañero = _compañero
+    }
+    method sueldoNeto(){
+        return compañero.sueldoNeto()
+    }
+    method sueldo (){
+        return self.sueldoNeto() + bonoDePresentismo.valorPara(self)
+    }
+    method cantidadFaltas(){
+        return 0
+    }
+}
