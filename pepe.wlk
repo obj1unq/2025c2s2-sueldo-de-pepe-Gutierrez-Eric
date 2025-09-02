@@ -40,7 +40,7 @@ object cadete {
 
 object gerente {
     method neto(){
-        return 150000
+        return 15000
     }
 }
 
