@@ -31,4 +31,27 @@ describe "Test sueldo de pepe" {
 		pepe.asignarFaltas(1)
 		assert.equals(23000, pepe.sueldo())
 	}
+	test "categoria base de medioTiempo es cadete"{
+		assert.equals(cadete,medioTiempo.categoria())
+	}
+	test "Pepe con categoria medioTiempo (cadete) con bonoResultadoPorcenutal y bonoPresentismoDemagogico con 1 falta" {
+		pepe.recategorizar(medioTiempo)
+		pepe.asignarBonoDeResultado(bonoPorResultadoPorcentual)
+		pepe.asignarBonoDePresentismo(bonoPorPresentismoDemagogico)
+		pepe.asignarFaltas(1)
+		assert.equals(11500,pepe.sueldo())
+	}
+	test "sueldo de Roque con bonoResultadoFijo es de 37800"{
+		roque.asignarBonoDeResultado(bonoPorResultadoFijo)
+		assert.equals(37800,roque.sueldo())
+	}
+
+	test "sueldo de Ernesto con compañero(pepe) y bonoDePresentismoAjuste es de 20100"{
+		ernesto.cambiarCompañero(pepe)
+		ernesto.asignarBonoDePresentismo(bonoPorPresentismoAjuste)
+		assert.equals(20100,ernesto.sueldo())
+	}
 }
+
+
+

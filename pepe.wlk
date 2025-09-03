@@ -96,7 +96,7 @@ object bonoPorPresentismoDemagogico{
 
 object sofia {
     var categoria = cadete
-    const bonoDeResultado = bonoNulo
+    var bonoDeResultado = bonoNulo
     method sueldo () {
         return self.sueldoNeto() + bonoDeResultado.valorPara(self)
     }
@@ -108,6 +108,9 @@ object sofia {
     }
     method categoria (){
         return categoria
+    }
+     method asignarBonoDeResultado(unBono){
+        bonoDeResultado = unBono
     }
 }
 
@@ -132,6 +135,9 @@ object vendedor{
 
 object medioTiempo {
     var categoria = cadete
+    method neto(){
+        return categoria.neto() / 2
+    }
     method categoriaBase(_categoria){
         categoria = _categoria
     }
@@ -142,7 +148,7 @@ object medioTiempo {
 }
 
 object roque {
-    const bonoDeResultado = bonoNulo
+    var bonoDeResultado = bonoNulo
     method sueldoNeto(){
         return 28000
     }
@@ -150,11 +156,14 @@ object roque {
         return self.sueldoNeto() + bonoDeResultado.valorPara(self)
                 + 9000
     }
+     method asignarBonoDeResultado(unBono){
+        bonoDeResultado = unBono
+    }
 }
 
 object ernesto {
     var compañero = pepe
-    const bonoDePresentismo = bonoNulo
+    var bonoDePresentismo = bonoNulo
     method compañero (){
         return compañero
     }
@@ -169,6 +178,9 @@ object ernesto {
     }
     method cantidadFaltas(){
         return 0
+    }
+     method asignarBonoDePresentismo(unBono){
+        bonoDePresentismo = unBono
     }
 }
 
