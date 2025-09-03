@@ -1,41 +1,31 @@
 import pepe.*
 
-describe "Sueldo Pepe siendo cadete" {
+describe "Test sueldo de pepe" {
 	
-	test "Test 1" {
-		assert.equals (cadete,pepe.categoria())
+	test "Sueldo Pepe siendo cadete con bonoResultadoFijo y bonoPresentismoNormal con 3 faltas es de 20800" {
+		pepe.recategorizar(cadete)
 		pepe.asignarBonoDeResultado(bonoPorResultadoFijo)
 		pepe.asignarBonoDePresentismo(bonoPorPresentismoNormal)
 		pepe.asignarFaltas(3)
 		assert.equals (20800,pepe.sueldo())
 	}
-}
 
-describe "Sueldo de pepe siendo gerente" {
-	
-	test "test 2"{
+	test "Sueldo de pepe siendo gerente con bonoResultadoPorcentual es de 16500"{
 		pepe.recategorizar(gerente)
-		assert.equals(gerente, pepe.categoria())
 		pepe.asignarBonoDeResultado(bonoPorResultadoPorcentual)
 		pepe.asignarBonoDePresentismo(bonoNulo)
 		assert.equals(16500, pepe.sueldo())
 	}
-}
 
-describe "Sueldo de pepe siendo cadete sin faltas" {
-
-	test "test 3" {
-		assert.equals(cadete, pepe.categoria())
+	test "Sueldo de pepe siendo cadete con bonoResultadoPorcentual y bonoPresentismoNormal sin faltas es de 24000" {
+		pepe.recategorizar(cadete)
 		pepe.asignarBonoDeResultado(bonoPorResultadoPorcentual)
 		pepe.asignarBonoDePresentismo(bonoPorPresentismoNormal)
 		assert.equals(24000, pepe.sueldo())
 	}
-}
 
-describe "Sueldo de pepe siendo cadete con 1 falta"{
-
-	test "test 4"{
-		assert.equals(cadete, pepe.categoria())
+	test "Sueldo de pepe siendo cadete con bonoResultadoPorcentual y bonoPresentismoNormal con 1 falta es de 23000"{
+		pepe.recategorizar(cadete)
 		pepe.asignarBonoDeResultado(bonoPorResultadoPorcentual)
 		pepe.asignarBonoDePresentismo(bonoPorPresentismoNormal)
 		pepe.asignarFaltas(1)
