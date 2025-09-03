@@ -112,26 +112,33 @@ object sofia {
 }
 
 object vendedor{
-    const ventas = 0
+    var aumento = false
     method neto (){
-        if(ventas > 10){
-            return 16000 * self.activarAumentoPorMuchasVentas()
+        if(aumento){
+            return 16000 * 1.25
         }else {
-            return 16000 * self.desactivarAumentoPorMuchasVentas()
-        }
-    }
+            return 16000 
+    } 
+}
+
     method activarAumentoPorMuchasVentas(){
-        return 1.25
+        aumento = true
     }
+
     method desactivarAumentoPorMuchasVentas(){
-        return 1
+        aumento = false
     }
 }
 
 object medioTiempo {
-    method categoriaBase(categoria){
-
+    var categoria = cadete
+    method categoriaBase(_categoria){
+        categoria = _categoria
     }
+    method categoria (){
+        return categoria
+    }
+
 }
 
 object roque {
@@ -168,3 +175,6 @@ object ernesto {
 // PROPERTY Asigna getters y setters automaticamente
 //Responsabilidad: que resuelve
 //Requerimiento: que pide el sistema
+//Precalculo : Calcular algo antes de tiempo
+
+//Decorator
