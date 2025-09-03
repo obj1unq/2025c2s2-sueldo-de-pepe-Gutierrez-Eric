@@ -164,3 +164,7 @@ object ernesto {
         return 0
     }
 }
+
+// PROPERTY Asigna getters y setters automaticamente
+//Responsabilidad: que resuelve
+//Requerimiento: que pide el sistema
